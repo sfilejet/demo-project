@@ -40,10 +40,9 @@ class PagesController extends AppController
      */
     public function display(...$path)
     {
-        $this->layout = "frontend";
-        if (!$path) {
-            return $this->redirect('/');
-        }
+        $this->viewBuilder()->setLayout("frontend");
+        
+        
         if (in_array('..', $path, true) || in_array('.', $path, true)) {
             throw new ForbiddenException();
         }
@@ -59,7 +58,7 @@ class PagesController extends AppController
         $this->set(compact('page', 'subpage'));
         
         try {
-            $this->render(implode('/', $path));
+            $this->render('home');
         } catch (MissingTemplateException $exception) {
             if (Configure::read('debug')) {
                 throw $exception;

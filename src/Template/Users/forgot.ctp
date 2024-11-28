@@ -1,7 +1,3 @@
-<?php 
-
-use Cake\Routing\Router;
-?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -10,7 +6,7 @@ use Cake\Routing\Router;
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Appcore - Sign In</title>
+        <title>Appcore - Forgot Password</title>
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,28 +64,25 @@ use Cake\Routing\Router;
                             <!-- Display Flash messages here -->
                             <?= $this->Flash->render() ?>
 
-                            <h1 class="hero-title text-center mb-5">Sign In</h1>
+                            <h1 class="hero-title text-center mb-5">Forgot Password</h1>
 
                             <div class="row">
                                 <div class="col-lg-8 col-11 mx-auto">
-                                    <?= $this->Form->create($user,['id'=>'user_login']) ?>
+                                    <?= $this->Form->create($userData,['id'=>'forgot_password']) ?>
 
                                         <div class="form-floating mb-4 p-0">
                                             <?= $this->Form->control('email',['type'=>'email','label'=>false,'class'=>'form-control']) ?>
                                             <label for="email">Email address</label>
                                         </div>
 
-                                        <div class="form-floating p-0">
-                                            <?= $this->Form->control('password',['type'=>'password','label'=>false,'class'=>'form-control']) ?>
-                                            <label for="password">Password</label>
-                                        </div>
+                                        
 
                                         <button type="submit" class="btn custom-btn form-control mt-4 mb-3">
-                                            Sign in
+                                            <?= __("forgot_password") ?>
                                         </button>
 
                                     <?= $this->Form->end() ?>
-                                    <p class="text-center">Have You Forgot Your Password? <a href="<?php echo  Router::url(["_name"=>'forgot']) ?>">Forgot Password</a></p>
+                                    <p class="text-center"><a href="<?= $this->Url->build(['_name'=>'user_signin']) ?>">Back to sign in </a></p>
                                 </div>
                             </div>
                         </div>
@@ -102,16 +95,16 @@ use Cake\Routing\Router;
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-10 me-auto mb-4">
-                        <h4 class="text-white mb-3"><a href="index.html">Appcore</a></h4>
+                        <h4 class="text-white mb-3"><a class="text-white mb-3"  href="<?= $this->Url->build(["_name"=>"home"]) ?>">Appcore Labs</a></h4>
                         <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2022 <strong>Little Fashion</strong></p>
                         <br>
-                        <p class="copyright-text">Designed by <a href="https://www.tooplate.com/" target="_blank">Appcore</a></p>
+                        <p class="copyright-text">Designed by <a href="<?= $this->Url->build(["_name"=>"home"]) ?>" target="_blank">Appcore Labs</a></p>
                     </div>
                     <div class="col-lg-5 col-8">
                         <h5 class="text-white mb-3">Sitemap</h5>
                         <ul class="footer-menu d-flex flex-wrap">
                             <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Story</a></li>
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Blogs</a></li>
                             <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
                             <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
                             <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>

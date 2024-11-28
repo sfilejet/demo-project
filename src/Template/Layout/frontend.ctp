@@ -17,7 +17,7 @@
 use Cake\Controller\Component\AuthComponent;
 
 // $cakeDescription = 'CakePHP: the rapid development php framework';
-$cakeDescription = "Appcore's Little Fashion";
+$cakeDescription = "Appcore";
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,9 +34,9 @@ $cakeDescription = "Appcore's Little Fashion";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <?= $this->Html->css('bootstrap.min.css') ?>
-    <?= $this->Html->css('bootstrap-icons.css') ?>
+    
     <?= $this->Html->css('slick.css') ?>
     <?= $this->Html->css('tooplate-little-fashion.css') ?>
 </head>
@@ -85,6 +85,8 @@ $cakeDescription = "Appcore's Little Fashion";
                             <?php if($this->Session->read('Auth.User.role.name') ==USER_ROLE): ?>
                                 <?= $this->Html->link('My Profile',['class'=>'bi-person custom-icon me-3']) ?>
                                 <!-- <?= $this->Html->link('Blogs',['class'=>'bi-bag custom-icon me-3']) ?> -->
+                            <?php else:?>
+                                <?= $this->Html->link('Sign In',['controller'=>'Users','action'=>'login']) ?>
                             <?php endif; ?>
                         </div>
                     </div>

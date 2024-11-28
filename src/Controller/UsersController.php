@@ -110,7 +110,7 @@ class UsersController extends AppController
     }
 
     public function login(){
-        $this->layout = false;
+        $this->viewBuilder()->setLayout(false);
         $user = $this->Users->newEntity();
         if($this->request->is('post')){
             $user = $this->Users->patchEntity($user,$this->request->getData(),['validate'=>'login']);
@@ -140,5 +140,14 @@ class UsersController extends AppController
             }
         }
         $this->set('user',$user);
+    }
+
+    public function forgot(){
+        $this->viewBuilder()->setLayout(false);
+        $userData = $this->Users->newEntity();
+        if($this->request->is('post')){
+            dd($this->request->getData());
+        }
+        $this->set('user',$userData);
     }
 }

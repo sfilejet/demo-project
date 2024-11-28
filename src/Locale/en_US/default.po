@@ -18,3 +18,6 @@ msgstr "Role Name"
 
 msgid "login_success"
 msgstr "User Logged-In Successfully"
+
+msgid "forgot_password"
+msgstr "Forgot Password"
