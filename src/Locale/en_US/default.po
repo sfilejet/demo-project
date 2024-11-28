@@ -1,0 +1,20 @@
+msgid "User Created"
+msgstr "User created successfully."
+
+msgid "User Id"
+msgstr "User Id"
+
+msgid "name"
+msgstr "Name"
+
+msgid "email"
+msgstr "Email"
+
+msgid "is_verified"
+msgstr "Is Verified"
+
+msgid "role_name"
+msgstr "Role Name"
+
+msgid "login_success"
+msgstr "User Logged-In Successfully"
